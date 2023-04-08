@@ -19,6 +19,7 @@ const linkLogoutStyle = {
 	color: "#fff",
 	display: "flex",
 	alignItems: "center",
+	gap: "4px"
 }
 
 const Nav = ({ onSearch, logout }) => {
@@ -34,8 +35,8 @@ const Nav = ({ onSearch, logout }) => {
 				<button type='button' className='navBtn'>
 					<NavLink style={linkStyle} to="/home">Home</NavLink>
 				</button>
-				<button onClick={() => logout()} type='button' className='logoutBtn'>
-					<NavLink style={linkLogoutStyle} to="/">
+				<button onClick={logout} type='button' className='logoutBtn'>
+					<NavLink style={linkLogoutStyle} href='/home'>
 						<svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-left" width="35" height="40" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#fff" fill="none" strokeLinecap="round" strokeLinejoin="round">
 							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
 							<line x1="5" y1="12" x2="19" y2="12" />
