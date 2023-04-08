@@ -1,0 +1,38 @@
+.Card{
+	width: 290px;
+	padding: 5px;
+	margin-left: 10px;
+	border: 3px solid #77bfa3;
+	border-radius: 10px;
+}
+
+.Card h2 {
+	font-size: 1.4rem;
+	border-bottom: 1px solid #77bfa3;
+	padding: 10px 0;
+}
+
+.Card h2:nth-child(6){
+	border-bottom: none;
+}
+
+.closeBtn {
+  margin-top: 5px;
+	margin-bottom: 5px;
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 150ms;
+	background-color: #ef233c;
+	font-size: large;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+	transform: rotateZ(90deg);
+	background-color: #d90429;
+}
+
