@@ -103,7 +103,13 @@ function App() {
          if (result.isConfirmed) {
             setCharacters([]);
             setAccess(false);
-            Swal.fire('Logged out!','You have been logged out.', 'success')
+            Swal.fire({
+               title: 'Logged out!',
+               text: 'You have been logged out.',
+               icon: 'success',
+               showConfirmButton: false,
+               timer: 1500
+            });
             navigate("/");
          }
       });
