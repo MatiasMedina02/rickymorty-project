@@ -1,12 +1,9 @@
-// Arreglar estilos cuando esta activo
-
 import { useState } from 'react';
 import imgForm from '../../assets/img_form.png';
 import './LoginForm.css';
 import { validation } from '../../utilities/validation';
 
 const LoginForm = ({ login }) => {
-	const [disabled, setDisabled] = useState(false);
 	const [userData, setUserData] = useState({
 		email: "",
 		password: "",
@@ -51,7 +48,7 @@ const LoginForm = ({ login }) => {
 					<p className='danger'>{errors.password}</p>
 				</div>
 				<div className="formGroup">
-					<button className={`formBtn ${!disabled && "isActive"}`} type="submit" disabled={disabled}>
+					<button className="formBtn isActive" type="submit">
 						Login
 					</button>
 				</div>
