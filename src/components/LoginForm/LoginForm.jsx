@@ -40,12 +40,12 @@ const LoginForm = ({ login }) => {
 				<div className="formGroup">
 					<label className='formLabel' htmlFor="#">Email</label>
 					<input value={userData.email} onChange={handleChange} className={`formInput ${errors.email && "warning"}`} name="email" type="text" placeholder="Email" />
-					<p className='danger'>{errors.email}</p>
+					{errors.email && <p className='danger'>{errors.email}</p>}
 				</div>
 				<div className="formGroup">
 					<label className='formLabel' htmlFor="#">Password</label>
 					<input value={userData.password} onChange={handleChange} className={`formInput ${errors.password && "warning"}`} name="password" type="password" placeholder="Password" />
-					<p className='danger'>{errors.password}</p>
+					{errors.password && <p className='danger'>{errors.password}</p>}
 				</div>
 				<div className="formGroup">
 					<button className="formBtn isActive" type="submit">
