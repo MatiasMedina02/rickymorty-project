@@ -47,8 +47,6 @@
 }
 
 .logoutBtn:hover {
-	border: 1px solid #297d53;
-	border-radius: 15px;
 	transform: translateY(-2px);
 }
 

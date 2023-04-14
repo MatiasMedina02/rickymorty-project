@@ -3,8 +3,13 @@
 	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 10px;
+	gap: 1rem;
 	padding: 30px;
+}
+
+.noCards {
+	margin-top: 1rem;
+	color:#b5e2fa;
 }
 
 @media (max-width: 768px) {
@@ -12,7 +17,6 @@
 		width: 768px;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 2px;
 		margin: 0;
 	}
 }

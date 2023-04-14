@@ -10,6 +10,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import LoginForm from './components/LoginForm/LoginForm';
+import Favorites from './components/Favorites/Favorites';
 
 const URL = "https://rickandmortyapi.com/api/character";
 const API_KEY = "";
@@ -18,7 +19,7 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const location = useLocation();
    const navigate = useNavigate()
-   const [access, setAccess] = useState(false);
+   const [access, setAccess] = useState(true);
    const EMAIL = "rusomedina02@gmail.com";
    const PASSWORD = "matias02";
 
@@ -127,6 +128,7 @@ function App() {
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
+            <Route path='/favorites' element={<Favorites />} />
             <Route path='*' element={<PageNotFound />} />
          </Routes>
       </div>

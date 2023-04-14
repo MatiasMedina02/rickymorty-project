@@ -6,14 +6,52 @@
 	border-radius: 10px;
 }
 
+.Card-img{
+  width: 100%;
+  margin-top: .5rem;
+}
+
 .Card h2 {
 	font-size: 1.4rem;
 	border-bottom: 1px solid #77bfa3;
 	padding: 10px 0;
 }
 
-.Card h2:nth-child(6){
-	border-bottom: none;
+.Card h2:nth-child(7){
+  border-bottom: none;
+}
+
+.Card-btn{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: .5rem 0;
+}
+
+.Card-btn button{
+  margin: 0 2.5rem;
+}
+
+.likeBtn {
+	background-color: #ff69b4;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 5px;
+}
+
+.dislikeBtn {
+	background-color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 5px;
 }
 
 .closeBtn {
@@ -32,7 +70,7 @@
 
 .closeBtn:hover,
 .closeBtn:focus {
-	transform: rotateZ(90deg);
+	transform: rotateZ(180deg);
 	background-color: #d90429;
 }
 
