@@ -13,7 +13,7 @@ const Nav = ({ onSearch, logout }) => {
 				<SearchBar onSearch={onSearch} />
 			</div>
 			<MediaQuery maxWidth="768px">
-				<Dropdown />
+				<Dropdown logout={logout} />
 			</MediaQuery>
 			<MediaQuery minWidth="769px">
 				<div className="NavButtons">

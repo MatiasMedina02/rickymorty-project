@@ -3,7 +3,8 @@ import "./Dropdown.css";
 import { options } from "../../utilities/options";
 import { NavLink } from "react-router-dom";
 
-const Dropdown = () => {
+const Dropdown = ({ logout }) => {
+	const [selected, setSelected] = useState("");
 	const [open, setOpen] = useState(false);
 	return (
 		<div className="Dropdown">
@@ -14,11 +15,11 @@ const Dropdown = () => {
 				<div className="Dropdown-content">
 					{options.map(option => (
 						<div className="Dropdown-item" key={option.id}>
-							<NavLink className="Dropdown-item__link" to={option.url}>{option.name}</NavLink>
+							<NavLink onClick={() => setOpen(false)} className="Dropdown-item__link" to={option.url}>{option.name}</NavLink>
 						</div>
 					))}
 					<div className="Dropdown-item">
-						<NavLink className="Dropdown-item__logout" to="/home">
+						<NavLink onClick={logout} className="Dropdown-item__logout" to="/home">
 							<i className="fa-solid fa-arrow-right-from-bracket"></i>
 							<span>Logout</span>
 						</NavLink>

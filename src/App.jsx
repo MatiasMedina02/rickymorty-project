@@ -19,14 +19,27 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const location = useLocation();
    const navigate = useNavigate()
-   const [access, setAccess] = useState(true);
+   const [access, setAccess] = useState(false);
    const EMAIL = "rusomedina02@gmail.com";
    const PASSWORD = "matias02";
 
    const onSearch = (id) => {
-      axios(`${URL}/${id}`).then(({ data }) => {
+      if(id < 1 || id > 826){
+         Swal.fire({
+            title: "Error",
+            text: '¡No hay personajes con este ID!',
+            icon: "error",
+            confirmButtonText: "Back",
+            confirmButtonColor: "#ef233c",
+            timer: 3000
+         });
+         return;
+      }
+      axios(`${URL}/${id}`)
+         .then(({ data }) => {
+         const filterCharsId = !characters.some(character => character.id === data.id)
          if (data.name){
-            if(!characters.some(character => character.id === data.id)){
+            if(filterCharsId){
                setCharacters((oldChars) => [...oldChars, data]);
             } else{
                Swal.fire({
@@ -38,17 +51,11 @@ function App() {
                   timer: 3000
                })
             }
-         } else{
-            Swal.fire({
-               title: "Error",
-               text: '¡No hay personajes con este ID!',
-               icon: "error",
-               confirmButtonText: "Back",
-               confirmButtonColor: "#ef233c",
-               timer: 3000
-            })
          }
-      });
+      })
+      .catch(error => {
+         console.error(error);
+      })
    };
 
    const onClose = (id) => {
