@@ -83,19 +83,21 @@ function App() {
    };
 
    const login = userData => {
-      if(userData.email === EMAIL && userData.password === PASSWORD){
-         setAccess(true);
-         navigate("/home");
-      } else{
-         Swal.fire({
-            title: "Error logging in",
-            text: "Your data is not correct. Please put it back.",
-            icon: "error",
-            timer: 3000,
-            confirmButtonText: "Go back",
-            confirmButtonColor: "#ef233c"
-         })
-      }
+      // if(userData.email === EMAIL && userData.password === PASSWORD){
+      //    setAccess(true);
+      //    navigate("/home");
+      // } else{
+      //    Swal.fire({
+      //       title: "Error logging in",
+      //       text: "Your data is not correct. Please put it back.",
+      //       icon: "error",
+      //       timer: 3000,
+      //       confirmButtonText: "Go back",
+      //       confirmButtonColor: "#ef233c"
+      //    })
+      // }
+      setAccess(true);
+      navigate("/home");
    }
 
    const logout = () => {
