@@ -19,10 +19,8 @@ export default function SearchBar({ onSearch }) {
    }
 
    const addCharacter = () => {
-      const result = onSearch(id);
-      if(!result){
-         return;
-      }
+      if(!id) return;
+      onSearch(id);
       setId("");
       Swal.fire({
          position: "top-right",

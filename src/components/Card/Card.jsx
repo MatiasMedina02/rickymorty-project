@@ -41,13 +41,15 @@ export const Card = ({ id, gender, name, image, onClose, origin, species, status
          )}
          </div>
          <img className="Card-img" src={image} alt={name} />
-         <Link to={`/detail/${id}`} style={{textDecoration: "none", color: "#c7f9cc"}}>
-            <h2>{name}</h2>
-         </Link>
-         <h2>Status: {status}</h2>
-         <h2>Specie: {species}</h2>
-         <h2>Gender: {gender}</h2>
-         <h2>Origin: {origin}</h2>
+         <div className="Card-content">
+            <Link to={`/detail/${id}`} className='Card-img__link'>
+               <h2>{name}</h2>
+            </Link>
+            <h2>Status: {status}</h2>
+            <h2>Specie: {species}</h2>
+            <h2>Gender: {gender}</h2>
+            <h2>Origin: {origin}</h2>
+         </div>
       </div>
    );
 }
