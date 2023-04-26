@@ -8,7 +8,7 @@ const Detail = () => {
 	const [character, setCharacter] = useState({});
 
 	useEffect(() => {
-		axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+		axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
 			if (data.name) {
 				setCharacter(data);
 			} else {
@@ -20,7 +20,7 @@ const Detail = () => {
 
 	return (
 		<>
-			{parseInt(id) !== character.id ? (
+			{id !== character.id ? (
 				<h1>Ingresa el id de un Personaje existente</h1>
 			) : (
 				<div className="characterDiv" key={character.id}>

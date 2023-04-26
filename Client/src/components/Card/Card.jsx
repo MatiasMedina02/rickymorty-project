@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 export const Card = ({ id, gender, name, image, onClose, origin, species, status}) => {
    const dispatch = useDispatch();
-   const { myFavorites } = useSelector(state => state)
+   const { myFavorites } = useSelector(state => state);
    const [isFav, setIsFav] = useState(false);
    
    const handleFavorite = () => {
@@ -21,11 +21,13 @@ export const Card = ({ id, gender, name, image, onClose, origin, species, status
    };
 
    useEffect(() => {
-      myFavorites.forEach(fav => {
-         if(fav.id === id){
-            setIsFav(true);
-         }
-      })
+      if(myFavorites.length > 0){
+         myFavorites.forEach(fav => {
+            if(fav.id === id){
+               setIsFav(true);
+            }
+         })
+      }
    }, [myFavorites])
 
    return (

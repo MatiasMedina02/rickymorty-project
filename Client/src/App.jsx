@@ -12,36 +12,32 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import LoginForm from './components/LoginForm/LoginForm';
 import Favorites from './components/Favorites/Favorites';
 
-const URL = "https://rickandmortyapi.com/api/character";
+const URL = "http://localhost:3001/rickandmorty/character";
+const URL_LOGIN = "http://localhost:3001/rickandmorty/login/";
 const API_KEY = "";
 
 function App() {
    const [characters, setCharacters] = useState([]);
    const location = useLocation();
    const navigate = useNavigate()
-   const [access, setAccess] = useState(true);
-   const EMAIL = "rusomedina02@gmail.com";
-   const PASSWORD = "matias02";
+   const [access, setAccess] = useState(false);
 
-   const onSearch = (id) => {
-      if(id < 1 || id > 826){
-         Swal.fire({
-            title: "Error",
-            text: '¡No hay personajes con este ID!',
-            icon: "error",
-            confirmButtonText: "Back",
-            confirmButtonColor: "#ef233c",
-            timer: 3000
-         });
-         return;
-      }
-      axios(`${URL}/${id}`)
-         .then(({ data }) => {
-         const filterCharsId = !characters.some(character => character.id === data.id)
+   const onSearch = async (id) => {
+      try {
+         const { data } = await axios(`${URL}/${id}`);
          if (data.name){
+            const filterCharsId = !characters.some(character => character.id === data.id)
             if(filterCharsId){
                setCharacters((oldChars) => [...oldChars, data]);
-            } else{
+               Swal.fire({
+                  position: "top-right",
+                  icon: "success",
+                  title: "Character added correctly.",
+                  showConfirmButton: false,
+                  timer: 1000,
+                  width: "50%",
+               })
+            } else {
                Swal.fire({
                   title: "Error",
                   text: "¡The character with that ID is already on the list!",
@@ -49,13 +45,20 @@ function App() {
                   confirmButtonText: "Back",
                   confirmButtonColor: "#ef233c",
                   timer: 3000
-               })
+               });
             }
          }
-      })
-      .catch(error => {
-         console.error(error);
-      })
+      } catch (error) {
+         Swal.fire({
+            title: "Error",
+            text: '¡There are no characters with this ID!',
+            icon: "error",
+            confirmButtonText: "Back",
+            confirmButtonColor: "#ef233c",
+            timer: 3000
+         });
+         console.error(error.message);
+      }
    };
 
    const onClose = (id) => {
@@ -69,7 +72,7 @@ function App() {
          confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
          if (result.isConfirmed) {
-            const charactersFilter = characters.filter(character => character.id !== parseInt(id));
+            const charactersFilter = characters.filter(character => character.id !== id);
             setCharacters(charactersFilter);
             Swal.fire({
                title: "Deleted!",
@@ -82,22 +85,16 @@ function App() {
       });
    };
 
-   const login = userData => {
-      // if(userData.email === EMAIL && userData.password === PASSWORD){
-      //    setAccess(true);
-      //    navigate("/home");
-      // } else{
-      //    Swal.fire({
-      //       title: "Error logging in",
-      //       text: "Your data is not correct. Please put it back.",
-      //       icon: "error",
-      //       timer: 3000,
-      //       confirmButtonText: "Go back",
-      //       confirmButtonColor: "#ef233c"
-      //    })
-      // }
-      setAccess(true);
-      navigate("/home");
+   const login = async userData => {
+      try {
+         const { email, password } = userData;
+         const { data } = await axios(URL_LOGIN + `?email=${email}&password=${password}`);
+         const { access } = data;
+         setAccess(access);
+         access && navigate("/home");
+      } catch (error) {
+         console.error(error.message);
+      }
    }
 
    const logout = () => {

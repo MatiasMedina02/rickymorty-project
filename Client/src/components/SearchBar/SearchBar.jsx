@@ -1,35 +1,19 @@
 import { useState } from "react";
 import './SearchBar.css';
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 
 export default function SearchBar({ onSearch }) {
    const [id, setId] = useState("");
 
-   const randomId = id => {
-      return Math.ceil(Math.random() * id)
-   }
+   const randomId = id =>  Math.ceil(Math.random() * id);
 
-   const handleChange = event => {
-      setId(event.target.value);
-   }
+   const handleChange = event => setId(event.target.value);
 
-   const addRandomCharacter = () => {
-      onSearch(randomId(826));
-   }
+   const addRandomCharacter = () => onSearch(randomId(826));
 
    const addCharacter = () => {
-      if(!id) return;
       onSearch(id);
       setId("");
-      Swal.fire({
-         position: "top-right",
-         icon: "success",
-         title: "Personaje agregado correctamente.",
-         showConfirmButton: false,
-         timer: 1000,
-         width: "50%",
-      })
    }
 
    return (
