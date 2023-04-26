@@ -8,7 +8,7 @@ const getChardById = async (req, res) => {
 		const { data } = await axios(`${URL}/${id}`)
 		if(!data.name) throw Error(`Faltan datos del personaje con ID: ${id}`);
 		const character = {
-			id,
+			id: data.id,
 			status: data.status,
 			name: data.name,
 			species: data.species,

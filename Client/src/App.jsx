@@ -16,6 +16,9 @@ const URL = "http://localhost:3001/rickandmorty/character";
 const URL_LOGIN = "http://localhost:3001/rickandmorty/login/";
 const API_KEY = "";
 
+// email: rusomedina02@gmail.com
+// password: matias02
+
 function App() {
    const [characters, setCharacters] = useState([]);
    const location = useLocation();

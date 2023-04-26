@@ -79,7 +79,7 @@ describe("Test de RUTAS", () => {
 		});
 
 		it("Si se envia un ID valido se elimina correctamente personaje", async () => {
-			const response = await request.delete("/rickandmorty/fav/2");
+			const response = await request.delete("/rickandmorty/fav/1");
 			expect(response.body.length).toBe(1);
 		})
 	});
