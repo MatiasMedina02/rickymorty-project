@@ -23,9 +23,9 @@
   top: 110%;
   right: 40%;
   background: #70e000;
-  box-shadow: 9px 9px 12px 0px #36872a;
+  box-shadow: 7px 7px 12px 0px #36872a;
   border-radius: 10px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .Dropdown-item{

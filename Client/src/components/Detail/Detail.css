@@ -3,9 +3,11 @@
 	padding-top: 5rem;
 	display: flex;
 	justify-content: space-evenly;
+	z-index: 0;
 }
 
 .characterInfo{
+	position: relative;
 	width: 600px;
 	border: 1px solid #588157;
 	border-radius: 10px;
@@ -32,6 +34,7 @@
 .characterInfo h2{
 	border-bottom: 1px solid #588157;
 	padding: 1rem 0;
+	color: #fff;
 }
 
 .characterInfo h2:last-child{
@@ -40,9 +43,15 @@
 }
 
 .characterImage{
-	border: 15px double #2d6a4f;
+	border: 15px double #70e000;
 	border-radius: 10px;
-	background-color: #95d5b2;
+	background: repeating-linear-gradient(
+		45deg,
+		#073b4c,
+		#073b4c 10px,
+		#06d6a0 10px,
+		#06d6a0 20px
+	);
 }
 
 @media (max-width: 768px) {

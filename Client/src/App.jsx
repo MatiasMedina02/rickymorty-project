@@ -97,6 +97,14 @@ function App() {
          access && navigate("/home");
       } catch (error) {
          console.error(error.message);
+         Swal.fire({
+            title: "Error",
+            text: '¡The data entered is not correct! Please try again',
+            icon: "error",
+            confirmButtonText: "Back",
+            confirmButtonColor: "#ef233c",
+            timer: 4000
+         });
       }
    }
 
@@ -127,19 +135,22 @@ function App() {
 
    useEffect(() => {
       !access && navigate("/");
-   }, [])
+   }, [access])
 
    return (
       <div className='App'>
-         {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />}
-         <Routes>
-            <Route path='/' element={<LoginForm login={login} />} />
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/detail/:id' element={<Detail />} />
-            <Route path='/favorites' element={<Favorites />} />
-            <Route path='*' element={<PageNotFound />} />
-         </Routes>
+         <div className="space stars1"></div>
+         <div className="space stars2"></div>
+         <div className="space stars3"></div>
+            {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />}
+            <Routes>
+               <Route path='/' element={<LoginForm login={login} />} />
+               <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+               <Route path='/about' element={<About />} />
+               <Route path='/detail/:id' element={<Detail />} />
+               <Route path='/favorites' element={<Favorites />} />
+               <Route path='*' element={<PageNotFound />} />
+            </Routes>
       </div>
    );
 }

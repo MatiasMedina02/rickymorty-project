@@ -4,32 +4,144 @@
    padding: 0;
 }
 
+#root {
+   height: 100%;
+}
+
 .App {
    width: 100%;
    min-width: 1280px;
-   height: 100%;
-   min-height: 700px;
+   min-height: 100vh;
    text-align: center;
-   background: linear-gradient(150deg, #073b4c, #0a9396, #11cb6e, #b7e4c7); 
-   background-size: 400% 400%;
+   font-family: 'Arial Rounded MT Bold', sans-serif;
    position: relative;
-   animation: gradientBg 15s ease infinite;
+   z-index: 1;
+   background: radial-gradient(circle at bottom, rgb(39, 18, 73) 0, black 100%);
 }
 
-@keyframes gradientBg {
-   0% {
-      background-position: 0% 50%;
-   }
-   50% {
-      background-position: 100% 50%;
-   }
-   100% {
-      background-position: 0% 50%; 
-   }
+.space {
+   background: rgba(128, 0, 128, 0.1) center / 200px 200px round;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   top: 0;
+   animation: zoom 15s alternate infinite;
+}
+
+.stars1 {
+   background-image:
+   radial-gradient(
+      1px 1px at 25px 5px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1px 1px at 50px 25px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1px 1px at 125px 20px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1.5px 1.5px at 50px 75px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      2px 2px at 15px 125px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      2.5px 2.5px at 110px 80px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   );
+}
+
+.stars2 {
+   background-image:
+   radial-gradient(
+      1px 1px at 75px 125px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1px 1px at 100px 75px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1.5px 1.5px at 199px 100px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      2px 2px at 20px 50px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      2.5px 2.5px at 100px 5px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      2.5px 2.5px at 5px 5px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   );
+}
+
+.stars3 {
+   background-image:
+   radial-gradient(
+      1px 1px at 10px 10px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1px 1px at 150px 150px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1.5px 1.5px at 60px 170px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      1.5px 1.5px at 175px 180px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      2px 2px at 195px 95px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   ),
+   radial-gradient(
+      2.5px 2.5px at 95px 145px, 
+      white, 
+      rgba(255, 255, 255, 0)
+   );
 }
 
 @media (max-width: 768px) {
    .App{
       min-width: 768px;
+   }
+}
+
+@keyframes zoom {
+   0%{
+      transform: scale(1);
+   }
+   100%{
+      transform: scale(1.5);
    }
 }

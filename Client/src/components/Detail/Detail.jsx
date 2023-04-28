@@ -21,7 +21,7 @@ const Detail = () => {
 	return (
 		<>
 			{parseInt(id) !== character.id ? (
-				<h1>Ingresa el id de un Personaje existente</h1>
+				<h1 style={{ marginTop: "1rem", color:"#b5e2fa" }}>Ingresa el id de un Personaje existente</h1>
 			) : (
 				<div className="characterDiv" key={character.id}>
 					<div className="characterInfo">

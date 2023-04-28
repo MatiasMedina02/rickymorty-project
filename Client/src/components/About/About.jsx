@@ -11,10 +11,10 @@ const About = () => {
 	return (
 		<div className="About">
 			<header className='headerAbout'>
-				<h1 className='headerAbout-titulo'>Bienvenidos a la página de Matías Medina 
+				<h1 className='headerAbout-titulo'>Welcome to Matías Medina's website
 					<span>
 						<TypeAnimation
-							sequence={["Desarrollador FrontEnd", 3000, "Desarrollador BackEnd"]}
+							sequence={["FrontEnd Developer", 3000, "BackEnd Developer"]}
 							cursor={true}
 							speed={10}
 							repeat={Infinity}
@@ -29,17 +29,17 @@ const About = () => {
 							</div>
 							<ul className="profile-card__social-media">
 								<li>
-									<a href="https://www.linkedin.com/in/matías-medina-844181242">
+									<a target='_blank' href="https://www.linkedin.com/in/matías-medina-844181242">
 										<img src={LinkedinLogo} alt="Logo Linkedin" />
 									</a>
 								</li>
 								<li>
-									<a href="https://www.youtube.com/@MatUDev-1806">
+									<a target='_blank' href="https://www.youtube.com/@MatUDev-1806">
 										<img src={YoutubeLogo} alt="Logo Linkedin" />
 									</a>
 								</li>
 								<li>
-									<a href="https://github.com/MatiasMedina02">
+									<a target='_blank' href="https://github.com/MatiasMedina02">
 										<img src={GithubLogo} alt="Logo Github" />
 									</a>
 								</li>
@@ -50,16 +50,16 @@ const About = () => {
 							</div>
 						</div>
 					</div>
-					<p>¡Hola!&#9996; Me llamo Matías Medina y soy un desarrollador FrontEnd de 20 años. A pesar de que hace menos de un año me introduje en la programación, estoy apasionado por el mundo de la tecnología y el desarrollo web.</p>
+					<p className='headerAbout-text'>Hello! &#9996; My name is Matías Medina and I'm a 20 year old FrontEnd developer. Although I got into programming less than a year ago, I am passionate about the world of technology and web development.</p>
 				</div>
 			</header>
 			<main className='mainAbout'>
 				<section className='sectionAbout'>
-					<h2 className='sectionAbout-titulo'>Misión</h2>
-					<p className='sectionAbout-mision'>Mi misión como desarrollador FrontEnd es crear sitios web hermosos, interactivos y accesibles. Me enorgullezco de ofrecer a mis clientes soluciones creativas y personalizadas que les permitan alcanzar sus objetivos de negocio.</p>
+					<h2 className='sectionAbout-titulo'>Mission</h2>
+					<p className='sectionAbout-mision'>My mission as a FrontEnd developer is to create beautiful, interactive and accessible websites. I pride myself in providing my clients with creative and customized solutions that allow them to achieve their business goals.</p>
 				</section>
 				<section className='sectionAbout'>
-					<h2 className='sectionAbout-titulo'>Tecnologías</h2>
+					<h2 className='sectionAbout-titulo'>Technologies</h2>
 					<div className="sectionAbout-techs">
 						{techs.map(tech => (
 							<div className="firstAnimation" key={tech.id}>
@@ -74,8 +74,8 @@ const About = () => {
 					</div>
 				</section>
 				<form className='sectionAbout form-contact'>
-					<h2 className='sectionAbout-titulo form-contact__title'>Contáctame</h2>
-					<p className='form-contact__description'>Si estás buscando un desarrollador FrontEnd confiable y apasionado, no dudes en contactarme.</p>
+					<h2 className='sectionAbout-titulo form-contact__title'>Contact me =&#41;</h2>
+					<p className='form-contact__description'>If you are looking for a reliable and passionate FrontEnd developer, don't hesitate to contact me.</p>
 					<div className="form-contact-email">
 						<input className='form-contact-email__input' type="text" placeholder='Your Email...' name='email' />
 						<textarea className='form-contact-email__message' style={{ width: "300px", height:"200px", resize: "none" }} name="message" placeholder='Your message...'></textarea>

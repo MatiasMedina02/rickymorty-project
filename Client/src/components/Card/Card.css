@@ -1,26 +1,24 @@
 .Card{
 	width: 325px;
-  height: 440px;
+  height: 400px;
 	padding: 5px;
 	margin-left: 10px;
 	display: inline-block;
-  border: 16px groove #159957;
   position: relative;
-  border-radius: 5px;
+  z-index: 0;
 }
 
-.Card::before{
-  content: '';
-  border: 0.25rem dashed #094527;
-  border-right: 0.25rem dashed #116f0a;
-  border-bottom: 0.25rem dashed #116f0a;
-  display: block; 
-  width: 100%;
-  height: 100%;
+.Card::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0) scale(1.015);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 6px solid #70e000;
+  border-radius: 10px;
+  transition: all .5s;
+  animation: clippath 10s infinite linear;
 }
 
 .Card-img{
@@ -32,7 +30,7 @@
 .Card-img__link{
   text-decoration: none;
   color: yellow;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-family: "Montserrat", sans-serif;
   display: block;
 	font-size: 35px;
 	letter-spacing: 3px;
@@ -49,6 +47,8 @@
 .Card h2 {
 	font-size: 1.4rem;
 	padding: 10px 0;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
 }
 
 .Card-btn{
@@ -122,4 +122,22 @@
 
 .Card:hover .Card-img {
   opacity: 0;
+}
+
+/* Keyframes */
+@keyframes clippath {
+  0%,
+  100% {
+      clip-path: inset(0 0 95% 0);
+  }
+  
+  25% {
+      clip-path: inset(0 95% 0 0);
+  }
+  50% {
+      clip-path: inset(95% 0 0 0);
+  }
+  75% {
+      clip-path: inset(0 0 0 95%);
+  }
 }

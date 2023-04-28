@@ -7,10 +7,13 @@
 	flex-direction: column;
 	text-align: start;
 	font-family: sans-serif;
+	position: relative;
+	z-index: 0;
 }
 
 /* Header About */
 .headerAbout{
+	height: 100%;
 	padding-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -45,6 +48,10 @@
 /* Header info perfil */
 .headerAbout-profile{
 	margin: 2rem;
+}
+
+.headerAbout-text {
+	color: #fff;
 }
 
 /* Card profile */
@@ -153,6 +160,7 @@ ul{
 
 /* Secciones about */
 .mainAbout{
+	height: 100%;
 	text-align: center;
 }
 
@@ -252,7 +260,7 @@ ul{
 }
 
 .form-contact__title{
-  width: 30%;
+  width: 40%;
 	margin: 0;
 }
 
@@ -355,7 +363,7 @@ ul{
 		margin-left: 1.5rem;
 	}
 	.form-contact__title{
-		width: 30%;
+		width: 35%;
 	}
 	.form-contact__description{
 		margin-top: 0;
