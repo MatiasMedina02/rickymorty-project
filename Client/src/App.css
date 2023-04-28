@@ -132,7 +132,7 @@
 }
 
 @media (max-width: 768px) {
-   .App{
+   .App {
       min-width: 768px;
    }
 }
