@@ -4,8 +4,22 @@
 	align-items: center;
 	padding: 20px 0;
 	position: relative;
-  z-index: 1;
-	border-bottom: 1px solid #70e000;
+  z-index: 2;
+	border-bottom: 1px solid #35fb0448;
+}
+
+.NavLogo {
+	width: 100px;
+	height: 50px;
+	position: relative;
+	margin: 0 -10px;
+	left: -15px;
+}
+
+.imgNavLogo {
+	width: 140px;
+	height: 50px;
+	cursor: pointer;
 }
 
 .NavButtons{

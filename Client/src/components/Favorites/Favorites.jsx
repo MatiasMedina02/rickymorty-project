@@ -19,7 +19,7 @@ const Favorites = () => {
 	}
 
 	return (
-		<div className="Favorites">
+		<div className={myFavorites.length > 0 ? "Favorites" : "No-Favorites"}>
 			<div className="Favorites-select">
 				<select onChange={handleOrder} name="order" defaultValue="Order">
 					<option value="Order" disabled>-- Order --</option>
@@ -36,20 +36,22 @@ const Favorites = () => {
 				</select>
 			</div>
 			
-			<div className="Favorites-card">
-				{myFavorites.map(fav => (
-					<Card 
-						key={fav.id}
-						id={fav.id} 
-						name={fav.name} 
-						gender={fav.gender}
-						origin={fav.origin} 
-						species={fav.species} 
-						status={fav.status}
-						image={fav.image}
-					/>
-				))}
-			</div>
+			{myFavorites.length > 0 && 
+				<div className="Favorites-card">
+					{myFavorites.map(fav => (
+						<Card 
+							key={fav.id}
+							id={fav.id} 
+							name={fav.name} 
+							gender={fav.gender}
+							origin={fav.origin} 
+							species={fav.species} 
+							status={fav.status}
+							image={fav.image}
+						/>
+					))}
+				</div>
+			}
 		</div>
 	)
 }

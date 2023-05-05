@@ -5,10 +5,18 @@ import { linkStyle, linkLogoutStyle } from '../../utilities/NavLinkStyles';
 import MediaQuery from 'react-responsive';
 import Dropdown from '../Dropdown/Dropdown';
 import { options } from '../../utilities/options';
+import logo from "../../assets/rickymorty_logo.png";
 
 const Nav = ({ onSearch, logout }) => {
 	return (
 		<div className="Nav">
+			<MediaQuery minWidth="769px">
+				<div className="NavLogo">
+					<NavLink to="/home">
+						<img className='imgNavLogo' src={logo} alt="Logo Rick y Morty" />
+					</NavLink>
+				</div>
+			</MediaQuery>
 			<div className="NavSearch">
 				<SearchBar onSearch={onSearch} />
 			</div>

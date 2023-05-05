@@ -4,7 +4,6 @@ import { options } from "../../utilities/options";
 import { NavLink } from "react-router-dom";
 
 const Dropdown = ({ logout }) => {
-	const [selected, setSelected] = useState("");
 	const [open, setOpen] = useState(false);
 	return (
 		<div className="Dropdown">

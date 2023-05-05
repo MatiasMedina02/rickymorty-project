@@ -1,0 +1,176 @@
+.RegisterForm {
+  width: 100%;
+  min-width: 1280px;
+  height: 100%;
+  min-height: 850px;
+  background-image: url("../../assets/fondo_inicio.png");
+  background-repeat: no-repeat;
+  background-size: 115% 100%;
+  position: relative;
+  z-index: 1;
+  animation: gradientBg 20s ease infinite;
+}
+
+.registerCard {
+	width: 400px;
+  height: 775px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.60);
+  box-shadow: 2px 2px 10px #ccc;
+	position: absolute;
+  top: 40%;
+  left: 50%;
+  margin: -300px 0 0 -200px;
+}
+
+.registerHeader {
+  margin: 20px 0;
+}
+
+.registerHeaderImage {
+  width: 225px;
+  height: 225px;
+}
+
+.formRegister {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroupRegistrate {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-top: 5px;
+}
+
+.labelRegister {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #ccff33;
+}
+
+.inputRegister {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.formGroupTerms {
+  display: flex;
+  align-items: start;
+  text-align: start;
+  margin: 1rem 0 0;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  border: 2px solid #ccff33;
+  border-radius: 3px;
+  background-color: white;
+}
+
+input[type=checkbox]:checked::before {
+  background-color: #ccff33;
+}
+
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
+.labelTerms {
+  margin-left: 1rem;
+  width: 75%;
+  color: #1dbf01;
+}
+
+.labelTerms a {
+  color: #fff;
+}
+
+.labelTerms a:hover {
+  color: blue;
+}
+
+.registerBtn{
+  width: 80%;
+  padding: 14px 0;
+  margin: 10px auto;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  font-family: sans-serif;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.isActive{
+  color: #000;
+  background-color: #fff;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.isActive:hover {
+  background-color: #ccff33;
+  box-shadow: 2px 2px 10px 5px #d1f373;
+  transform: translateY(-7px);
+}
+
+.isActive:active {
+  transform: translateY(-1px);
+}
+
+/* Mediaquerys */
+@media (max-width: 768px) {
+  .RegisterForm{
+    min-width: 768px;
+  }
+}
+
+/* Keyframes */
+@keyframes gradientBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%; 
+  }
+}

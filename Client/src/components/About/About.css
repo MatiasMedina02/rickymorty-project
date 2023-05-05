@@ -27,7 +27,7 @@
 	font-size: 40px;
 	font-weight: 700;
 	font-style: italic;
-	padding-bottom: 1rem;
+	padding: 1rem 0;
 }
 
 .headerAbout-titulo span{
@@ -94,7 +94,7 @@
 	width: 100%;
 	padding: 0 1rem;
 	transform: translateY(-370%);
-	z-index: 3;
+	z-index: 2;
 }
 
 .profile-card__social-media li{
@@ -141,16 +141,19 @@ ul{
 	opacity: 1;
 }
 
-.profile-card:hover .profile-card__social-media li:nth-child(1){
-	transition-delay: 0.2s;
+.profile-card:hover .profile-card__social-media li:nth-child(1):hover{
+	background-color: #0073B1;
+	box-shadow:  0px 0px 12px 5px #2d7aa4;
 }
 
-.profile-card:hover .profile-card__social-media li:nth-child(2){
-	transition-delay: 0.3s;
+.profile-card:hover .profile-card__social-media li:nth-child(2):hover{
+	background-color: #F70000;
+	box-shadow:  0px 0px 12px 5px #ff5656;
 }
 
-.profile-card:hover .profile-card__social-media li:nth-child(3){
-	transition-delay: 0.4s;
+.profile-card:hover .profile-card__social-media li:nth-child(3):hover{
+	background-color: #fff;
+	box-shadow:  0px 0px 12px 5px #5e5e5e;
 }
 
 /* Header info parrafo */
@@ -185,7 +188,7 @@ ul{
 
 .sectionAbout-mision{
 	width: 50%;
-	height: 100px;
+	height: 110px;
 	padding: 2rem;
 	margin: 1rem auto;
 	display: flex;
@@ -193,9 +196,11 @@ ul{
 	justify-content: center;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-style: oblique;
-	border-radius: 30px;
-	background: #e0e0e0;
-	box-shadow: 0px 0px 16px 5px rgba(216,243,220,1);
+	font-size: 17px;
+	border-radius: 20px;
+	color: #fff;
+	background: #0000003e;
+	box-shadow: 0px 0px 15px 0px #d8f3dc;
 }
 
 /* Tecnologias */
@@ -223,8 +228,8 @@ ul{
 .cardTech:hover {
   width: 190px;
   height: 230px;
-  background: rgb(255, 255, 255);
-  border: 2px solid rgb(200, 200, 200);
+  background: #ffffff;
+  border: 2px solid #c8c8c8;
   border-radius: 20px;
   transition: all .5s;
 	cursor: pointer;
@@ -327,6 +332,9 @@ ul{
 @media (max-width: 768px) {
 	.headerAbout-info{
 		flex-direction: row;
+		background-color: #0000002a;
+		box-shadow: 0px 0px 15px 0px #d8f3dc;
+		border-radius: 10px;
 	}
 	.headerAbout-profile{
 		margin: 0;
@@ -335,7 +343,7 @@ ul{
 		display: block;
 	}
 	.headerAbout-info p{
-		margin-left: 1rem;
+		margin-left: 3rem;
 		text-align: start;
 	}
 	.mainAbout{

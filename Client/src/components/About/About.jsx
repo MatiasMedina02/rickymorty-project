@@ -3,9 +3,7 @@ import './About.css';
 import { techs } from "../../utilities/data";
 
 import logoPerfil from '../../assets/logo_perfil.png';
-import YoutubeLogo from "../../assets/youtube.png";
-import LinkedinLogo from "../../assets/linkedin.png";
-import GithubLogo from "../../assets/github.png";
+import { socialMedia } from '../../utilities/data';
 
 const About = () => {
 	return (
@@ -28,21 +26,13 @@ const About = () => {
 								<img src={logoPerfil} alt="Perfil" width="250px"/>
 							</div>
 							<ul className="profile-card__social-media">
-								<li>
-									<a target='_blank' href="https://www.linkedin.com/in/matías-medina-844181242">
-										<img src={LinkedinLogo} alt="Logo Linkedin" />
-									</a>
-								</li>
-								<li>
-									<a target='_blank' href="https://www.youtube.com/@MatUDev-1806">
-										<img src={YoutubeLogo} alt="Logo Linkedin" />
-									</a>
-								</li>
-								<li>
-									<a target='_blank' href="https://github.com/MatiasMedina02">
-										<img src={GithubLogo} alt="Logo Github" />
-									</a>
-								</li>
+								{socialMedia.map(social => (
+									<li key={social.id}>
+										<a target='_blank' href={social.url}>
+											<img src={social.image} alt="Social Media Logo" />
+										</a>
+									</li>
+								))}
 							</ul>
 							<div className="profile-card__info">
 								<p className="profile-card__name">Matías Medina</p>

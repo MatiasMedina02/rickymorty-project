@@ -5,8 +5,8 @@ function Cards({ characters, onClose }) {
    return (
       <>
          {characters.length === 0 ? (
-            <div className='noCards'>
-               <h1>Search a character by ID or randomly </h1>
+            <div className='noCards' style={{ width: "100%", height: "100vh" }}>
+               <h1>Search a character by ID or randomly</h1>
             </div>
             ) : (
             <div className='Cards' >

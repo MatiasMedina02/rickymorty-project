@@ -11,6 +11,8 @@ import Detail from './components/Detail/Detail';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import LoginForm from './components/LoginForm/LoginForm';
 import Favorites from './components/Favorites/Favorites';
+import Footer from './components/Footer/Footer';
+import RegisterForm from './components/RegisterForm/RegisterForm';
 
 const URL = "http://localhost:3001/rickandmorty/character";
 const URL_LOGIN = "http://localhost:3001/rickandmorty/login/";
@@ -23,7 +25,7 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const location = useLocation();
    const navigate = useNavigate()
-   const [access, setAccess] = useState(false);
+   const [access, setAccess] = useState(true);
 
    const onSearch = async (id) => {
       try {
@@ -142,15 +144,17 @@ function App() {
          <div className="space stars1"></div>
          <div className="space stars2"></div>
          <div className="space stars3"></div>
-            {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />}
+            {location.pathname !== "/" && location.pathname !== "/register" && <Nav onSearch={onSearch} logout={logout} />}
             <Routes>
                <Route path='/' element={<LoginForm login={login} />} />
+               <Route path='/register' element={<RegisterForm />} />
                <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
                <Route path='/about' element={<About />} />
                <Route path='/detail/:id' element={<Detail />} />
                <Route path='/favorites' element={<Favorites />} />
                <Route path='*' element={<PageNotFound />} />
             </Routes>
+            {location.pathname !== "/" && location.pathname !== "/register" && <Footer />}
       </div>
    );
 }

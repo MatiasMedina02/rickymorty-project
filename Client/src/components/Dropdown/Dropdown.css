@@ -25,7 +25,7 @@
   background: #70e000;
   box-shadow: 7px 7px 12px 0px #36872a;
   border-radius: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .Dropdown-item{

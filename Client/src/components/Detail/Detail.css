@@ -1,8 +1,10 @@
 .characterDiv{
-	height: 100%;
-	padding-top: 5rem;
+	height: 100vh;
+	max-height: 500px;
 	display: flex;
 	justify-content: space-evenly;
+	align-items: center;
+	position: relative;
 	z-index: 0;
 }
 
@@ -31,6 +33,10 @@
   animation: flicker steps(100) 1s 1s infinite;
 }
 
+.titleCharacter {
+	color: #70e000;
+}
+
 .characterInfo h2{
 	border-bottom: 1px solid #588157;
 	padding: 1rem 0;
@@ -47,15 +53,19 @@
 	border-radius: 10px;
 	background: repeating-linear-gradient(
 		45deg,
-		#073b4c,
-		#073b4c 10px,
-		#06d6a0 10px,
-		#06d6a0 20px
+		#073b4c 25%,
+		#073b4c 50%,
+		#06d6a0 50%,
+		#06d6a0 75%
 	);
+	background-size: 50px 50px;
+	animation: stripeBackgroundPosition 2s linear infinite;
 }
 
 @media (max-width: 768px) {
 	.characterDiv{
+		height: 100vh;
+		min-height: 800px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -72,9 +82,21 @@
 	}
 }
 
+
+/* Keyframes */ 
 @keyframes flicker {
   50% {
     color: white;
     filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+
+@keyframes stripeBackgroundPosition {
+  0% {
+    background-position: 0 0;
+  }
+  
+  100% {
+    background-position: calc(100px * -1) 0;
   }
 }

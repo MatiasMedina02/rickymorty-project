@@ -2,6 +2,8 @@ import { useState } from 'react';
 import imgForm from '../../assets/img_form.png';
 import './LoginForm.css';
 import { validation } from '../../utilities/validation';
+import { Link } from "react-router-dom";
+import { FaSignInAlt } from "react-icons/fa";
 
 const LoginForm = ({ login }) => {
 	const [userData, setUserData] = useState({
@@ -12,6 +14,7 @@ const LoginForm = ({ login }) => {
 		email: "",
 		password: ""
 	});
+	const [showPass, setShowPass] = useState(false);
 
 	const handleChange = event => {
 		setUserData({
@@ -33,25 +36,36 @@ const LoginForm = ({ login }) => {
 
 	return (
 		<div className="Login">
-			<div className="loginCard">
+			<div className={`${errors.password || errors.email ? "loginCardErrors" : "loginCard"}`}>
 				<div className="loginHeader">
-					<img src={imgForm} alt="Rick & Morty" style={{ borderRadius: "50%" }} />
+					<img className='loginHeaderImage' src={imgForm} alt="Rick & Morty" />
 				</div>
 				<form onSubmit={handleSubmit}>
 					<div className="formGroup">
 						<label className='formLabel' htmlFor="#">Email</label>
-						<input value={userData.email} onChange={handleChange} className={`formInput ${errors.email && "warning"}`} name="email" type="text" placeholder="janedoe@gmail.com" />
+						<input value={userData.email} onChange={handleChange} className={`formInput ${errors.email && "warning"}`} name="email" maxLength="30" type="text" placeholder="janedoe@gmail.com" />
 						{errors.email && <p className='danger'>{errors.email}</p>}
 					</div>
 					<div className="formGroup">
 						<label className='formLabel' htmlFor="#">Password</label>
-						<input value={userData.password} onChange={handleChange} className={`formInput ${errors.password && "warning"}`} name="password" type="password" placeholder="Enter your password" />
+						<div className="formGroupInput">
+							<input value={userData.password} onChange={handleChange} className={`formInput ${errors.password && "warning"}`} name="password" maxLength="30" type={showPass ? "text" : "password"} placeholder="Enter your password" />
+							<div className={errors.email && errors.password ? 'inputBtnErrors' : 'inputBtn'} onClick={() => setShowPass(!showPass)}>
+								{showPass ? <i className="fa-solid fa-eye"></i> : <i className="fa-solid fa-eye-slash"></i>}
+							</div>
+						</div>
 						{errors.password && <p className='danger'>{errors.password}</p>}
 					</div>
 					<div className="formGroup">
 						<button className="formBtn isActive" type="submit">
 							Login
 						</button>
+					</div>
+					<div className="formGroupRegister">
+						<p>Not registered yet?</p>
+						<Link className='registerLink' to="/register">
+							<FaSignInAlt /> Sign Up
+						</Link>
 					</div>
 				</form>
 			</div>
