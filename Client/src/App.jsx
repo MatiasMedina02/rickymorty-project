@@ -15,7 +15,7 @@ import Footer from './components/Footer/Footer';
 import RegisterForm from './components/RegisterForm/RegisterForm';
 
 const URL = "http://localhost:3001/rickandmorty/character";
-const URL_LOGIN = "http://localhost:3001/rickandmorty/login/";
+const URL_LOGIN = "http://localhost:3001/rickandmorty/login";
 const API_KEY = "";
 
 // email: rusomedina02@gmail.com
@@ -25,7 +25,7 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const location = useLocation();
    const navigate = useNavigate()
-   const [access, setAccess] = useState(true);
+   const [access, setAccess] = useState(false);
 
    const onSearch = async (id) => {
       try {
@@ -34,14 +34,14 @@ function App() {
             const filterCharsId = !characters.some(character => character.id === data.id)
             if(filterCharsId){
                setCharacters((oldChars) => [...oldChars, data]);
-               Swal.fire({
-                  position: "top-right",
-                  icon: "success",
-                  title: "Character added correctly.",
-                  showConfirmButton: false,
-                  timer: 1000,
-                  width: "50%",
-               })
+               // Swal.fire({
+               //    position: "top-right",
+               //    icon: "success",
+               //    title: "Character added correctly.",
+               //    showConfirmButton: false,
+               //    timer: 1000,
+               //    width: "50%",
+               // })
             } else {
                Swal.fire({
                   title: "Error",

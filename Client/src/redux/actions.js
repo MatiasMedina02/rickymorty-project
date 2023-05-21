@@ -17,13 +17,13 @@ export const addFav = character => {
 }
 
 export const removeFav = id => {
-	const endpoint = "http://localhost:3001/rickandmorty/fav/" + id;
+	const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
 	return async dispatch => {
 		try {
-				const { data } = await axios.delete(endpoint);
+				await axios.delete(endpoint);
 				return dispatch({
 					type: REMOVE_FAV,
-					payload: data,
+					payload: id,
 				});
 		} catch (error) {
 			console.error(error);

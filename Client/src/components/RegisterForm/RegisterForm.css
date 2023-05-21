@@ -2,7 +2,7 @@
   width: 100%;
   min-width: 1280px;
   height: 100%;
-  min-height: 850px;
+  min-height: 1000px;
   background-image: url("../../assets/fondo_inicio.png");
   background-repeat: no-repeat;
   background-size: 115% 100%;
@@ -13,7 +13,6 @@
 
 .registerCard {
 	width: 400px;
-  height: 775px;
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.60);
@@ -21,7 +20,7 @@
 	position: absolute;
   top: 40%;
   left: 50%;
-  margin: -300px 0 0 -200px;
+  margin: -350px 0 0 -200px;
 }
 
 .registerHeader {
